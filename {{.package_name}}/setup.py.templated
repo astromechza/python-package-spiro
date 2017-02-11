@@ -1,0 +1,25 @@
+from setuptools import setup, find_packages
+
+setup(
+    # package info
+    name='{{.package_name}}',
+    version='0.1',
+    description='{{.short_description}}',
+    packages=find_packages(exclude=['tests', 'tests.*']),
+
+    # runtime scripts
+    scripts=[],
+
+    # alternate (preferable form)
+    entry_points={
+        'console_scripts': [
+            # 'name_of_executable = module.with:function_to_execute'
+        ]
+    },
+
+    # run time requirements
+    # exact versions are in the requirements.txt file
+    install_requires=[],
+
+    # tests dependencies are listed in the test_requirements.txt file
+)

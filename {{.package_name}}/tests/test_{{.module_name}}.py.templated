@@ -1,0 +1,21 @@
+import {{.module_name}}
+
+"""
+Run these tests using py.test from the command line.
+$ py.test
+Remember to do this first:
+$ python setup.py develop
+$ pip install -r requirements.txt
+$ pip install -r test_requirements.txt
+"""
+
+# simple way of doing tests
+def test_blank():
+    assert True
+
+# more complex form
+from unittest import TestCase
+def TestComplex(TestCase):
+
+    def test_the_thing(self):
+        self.assertIn(1, [1, 2, 3])

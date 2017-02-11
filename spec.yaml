@@ -1,0 +1,9 @@
+# These two names _should_ be the same but technically can be different.
+# The package name will be the distributable name of the package and can contain
+# hyphens and capital letters.
+# The module name is the name of the default module created for you.
+package_name: myexample
+module_name: myexample
+
+# Add a short description sentence that will be added to the readme and setup.py
+short_description: ""
