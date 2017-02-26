@@ -6,17 +6,14 @@ setup(
     version='0.1',
     description='{{.short_description}}',
     packages=find_packages(exclude=['tests', 'tests.*']),
-
-    # runtime scripts
-    scripts=[],
-
-    # alternate (preferable form)
+{{ if .entrypoints }}
+    # scripts to install to usr/bin
     entry_points={
-        'console_scripts': [
-            # 'name_of_executable = module.with:function_to_execute'
+        'console_scripts': [{{$modn := .module_name}}{{ range .entrypoints }}
+            '{{.}}={{$modn}}.cli:{{.}}_main'{{ end }}
         ]
     },
-
+{{ end }}
     # run time requirements
     # exact versions are in the requirements.txt file
     install_requires=[],
