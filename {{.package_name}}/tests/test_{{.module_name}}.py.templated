@@ -2,11 +2,7 @@ import {{.module_name}}
 
 """
 Run these tests using py.test from the command line.
-$ py.test
-Remember to do this first:
-$ python setup.py develop
-$ pip install -r requirements.txt
-$ pip install -r test_requirements.txt
+$ python setup.py test
 """
 
 # simple way of doing tests

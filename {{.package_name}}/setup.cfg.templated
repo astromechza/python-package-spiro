@@ -1,2 +1,5 @@
+[alias]
+test=pytest
+
 [tool:pytest]
 addopts = tests --tb=short --cov={{.module_name}} --cov-report=term-missing --cov-report=html

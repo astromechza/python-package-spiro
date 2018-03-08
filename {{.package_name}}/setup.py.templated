@@ -10,7 +10,7 @@ setup(
     # scripts to install to usr/bin
     entry_points={
         'console_scripts': [{{$modn := .module_name}}{{ range .entrypoints }}
-            '{{.}}={{$modn}}.cli:{{.}}_main'{{ end }}
+            '{{.}}={{$modn}}.cli:{{replace . "-" "_"}}_main'{{ end }}
         ]
     },
 {{ end }}
@@ -18,5 +18,6 @@ setup(
     # exact versions are in the requirements.txt file
     install_requires=[],
 
-    # tests dependencies are listed in the test_requirements.txt file
+    setup_requires=['pytest-runner'],
+    tests_require=['pytest', 'pytest-cov'],
 )

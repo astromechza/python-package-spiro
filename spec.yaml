@@ -2,15 +2,15 @@
 # The package name will be the distributable name of the package and can contain
 # hyphens and capital letters.
 # The module name is the name of the default module created for you.
-package_name: myexample
-module_name: myexample
+package_name: hello-world
+module_name: hello_world
 
 # Add a short description sentence that will be added to the readme and setup.py
-short_description: ""
+short_description: "Hello world example project"
 
 # If your package requires one or more cli entrypoints add them below.
 # The name of the entrypoint will be the name of the script added to usr/bin.
-# If you need hyphens in the entrypoint, add them in setup.py after generating 
+# If you need hyphens in the entrypoint, add them in setup.py after generating
 # the project.
 entrypoints:
-    # - runmyexample
+    - hello-world
