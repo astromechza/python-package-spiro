@@ -5,7 +5,7 @@ python:
   - "3.5"
   - "3.6"
 install:
-  - curl https://raw.githubusercontent.com/AstromechZA/spiro/master/install.sh | sh
+  - curl https://raw.githubusercontent.com/AstromechZA/spiro/master/install.sh | bash
 script:
   - mkdir demo
   - spiro ./\{\{.package_name\}\} ./spec.yaml demo
