@@ -4,6 +4,8 @@ python:
   - "2.7"
   - "3.5"
   - "3.6"
+env:
+  - SETUPTOOLS_SCM_PRETEND_VERSION=0.0.0
 install:
   - curl https://raw.githubusercontent.com/AstromechZA/spiro/master/install.sh | bash
 script:
