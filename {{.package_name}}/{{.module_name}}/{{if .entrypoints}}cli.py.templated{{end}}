@@ -8,4 +8,5 @@ def {{ stringreplace . "-" "_" }}_main():
     """
     This method is run when the `{{ . }}` script is called.
     """
-    print "Hello world ({{ . }})"{{end}}
+    print("Hello world ({{ . }})")
+{{end}}
