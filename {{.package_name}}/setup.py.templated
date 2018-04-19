@@ -1,23 +1,45 @@
 from setuptools import setup, find_packages
 
+# declare these here since we use them in multiple places
+_tests_require = [
+    'pytest',
+    'pytest-cov',
+    'flake8',
+]
+
+
 setup(
     # package info
-    name='{{.package_name}}',
-    version='0.1',
-    description='{{.short_description}}',
+    name='{{ .package_name }}',
+    description='{{ .short_description }}',
+    {{ if .use_scm_versioning }}# {{ end }}version='0.0.0',
+    author='{{ .author }}',
+    author_email='{{ .author_email }}',
     packages=find_packages(exclude=['tests', 'tests.*']),
+
 {{ if .entrypoints }}
     # scripts to install to usr/bin
     entry_points={
         'console_scripts': [{{$modn := .module_name}}{{ range .entrypoints }}
-            '{{.}}={{$modn}}.cli:{{replace . "-" "_"}}_main'{{ end }}
+            '{{.}}={{$modn}}.cli:{{stringreplace . "-" "_"}}_main'{{ end }}
         ]
     },
 {{ end }}
+
     # run time requirements
     # exact versions are in the requirements.txt file
     install_requires=[],
 
-    setup_requires=['pytest-runner'],
-    tests_require=['pytest', 'pytest-cov'],
+    # need this for setup.py test
+    setup_requires=[
+        'pytest-runner',
+        {{ if .use_scm_versioning }}'setuptools_scm',{{ end }}
+    ],
+
+    # test dependencies
+    tests_require=_tests_require,
+    extras_require={
+        # this allows us to pip install .[test] for all test dependencies
+        'test': _tests_require,
+    }
 )

@@ -1,17 +1,20 @@
-import {{.module_name}}
+import pytest
 
-"""
-Run these tests using py.test from the command line.
-$ python setup.py test
-"""
+import {{ .module_name }}
 
-# simple way of doing tests
+
+@pytest.mark.parametrize("a,b", (
+    (1, 2),
+    (3, 4),
+))
+def test_thing(a, b):
+    assert a
+    assert b
+
+
 def test_blank():
-    assert True
+    assert {{ .module_name }}
 
-# more complex form
-from unittest import TestCase
-def TestComplex(TestCase):
 
-    def test_the_thing(self):
-        self.assertIn(1, [1, 2, 3])
+def test_with_fixture(fixture_name):
+    assert fixture_name

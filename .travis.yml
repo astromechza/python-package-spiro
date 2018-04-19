@@ -1,0 +1,16 @@
+language: python
+python:
+  - "2.6"
+  - "2.7"
+  - "3.5"
+  - "3.6"
+install:
+  - curl https://raw.githubusercontent.com/AstromechZA/spiro/master/install.sh | sh
+script:
+  - mkdir demo
+  - spiro ./\{\{.package_name\}\} ./spec.yaml demo
+  - cd demo/hello-world
+  - python setup.py develop
+  - python setup.py test
+  - pip install .[test]
+  - python setup.py check -ms

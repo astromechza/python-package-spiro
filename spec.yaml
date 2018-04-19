@@ -5,8 +5,15 @@
 package_name: hello-world
 module_name: hello_world
 
+# Author information embedded in package
+author: Change Me
+author_email: changeme@example.com
+
 # Add a short description sentence that will be added to the readme and setup.py
-short_description: "Hello world example project"
+short_description: Hello world example project
+
+# Use setuptools_scm versioning to pull the version number from VCS tags
+use_scm_versioning: true
 
 # If your package requires one or more cli entrypoints add them below.
 # The name of the entrypoint will be the name of the script added to usr/bin.
