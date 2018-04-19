@@ -7,5 +7,5 @@ It will generate a skeleton Python project.
 Copy and modify spec.yaml and then do:
 
 ```
-$ spiro python-package-spiro/{{.package_name}} spec.yaml my/output/directory/
+$ spiro -edit python-package-spiro/{{.package_name}} spec.yaml my/output/directory/
 ```
