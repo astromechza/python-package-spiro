@@ -7,8 +7,9 @@ python:
 install:
   - curl https://raw.githubusercontent.com/AstromechZA/spiro/master/install.sh | bash
 script:
+  - set -e
   - mkdir demo
-  - spiro ./\{\{.package_name\}\} ./spec.yaml demo
+  - ./spiro ./\{\{.package_name\}\} ./spec.yaml demo
   - cd demo/hello-world
   - python setup.py develop
   - python setup.py test
