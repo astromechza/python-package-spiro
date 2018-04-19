@@ -37,6 +37,9 @@ setup(
         {{ if .use_scm_versioning }}'setuptools_scm',{{ end }}
     ],
 
+    # needs this if using setuptools_scm
+    {{ if not .use_scm_versioning }}# {{ end }}use_scm_version=True,
+
     # test dependencies
     tests_require=_tests_require,
     extras_require={
