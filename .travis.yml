@@ -11,6 +11,7 @@ script:
   - mkdir demo
   - ./spiro ./\{\{.package_name\}\} ./spec.yaml demo
   - cd demo/hello-world
+  - cat setup.py
   - python setup.py develop
   - python setup.py test
   - pip install .[test]

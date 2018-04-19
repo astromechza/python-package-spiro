@@ -13,6 +13,7 @@ setup(
     name='{{ .package_name }}',
     description='{{ .short_description }}',
     {{ if .use_scm_versioning }}# {{ end }}version='0.0.0',
+    url='http://your/url/here',
     author='{{ .author }}',
     author_email='{{ .author_email }}',
     packages=find_packages(exclude=['tests', 'tests.*']),
